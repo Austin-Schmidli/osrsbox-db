@@ -15,4 +15,4 @@ jobs:
       - name: runeql-transform
         uses: schmidlidev/runeql-tools/transform@main
         env:
-          RUNEQL_DATA_LOAD: ${{ secrets.RUNEQL_DATA_LOAD }}
+          RUNEQL_DATA_LOAD: ${{ secrets.RUNEQL_DATA_PUSH }}
