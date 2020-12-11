@@ -16,3 +16,8 @@ jobs:
         uses: schmidlidev/runeql-tools/transform@main
         env:
           RUNEQL_DATA_LOAD: ${{ secrets.RUNEQL_DATA_PUSH }}
+
+      - name: open runeql-data pull request
+        uses: schmidlidev/runeql-tools/auto_pr@main
+        env:
+          RUNEQL_DATA_PUSH: ${{ secrets.RUNEQL_DATA_PUSH }}
