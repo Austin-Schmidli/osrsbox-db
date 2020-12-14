@@ -1,0 +1,23 @@
+name: runeql-data update
+
+on:
+  push:
+    branches: [master]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  runeql_data_update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: runeql-transform
+        uses: schmidlidev/runeql-tools/transform@main
+        env:
+          RUNEQL_BOT_KEY: ${{ secrets.RUNEQL_BOT_KEY }}
+
+      - name: open runeql-data pull request
+        uses: schmidlidev/runeql-tools/auto_pr@main
+        env:
+          RUNEQL_BOT_KEY: ${{ secrets.RUNEQL_BOT_KEY }}
